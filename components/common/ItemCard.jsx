@@ -4,7 +4,7 @@ import Link from "next/link";
 function ItemCard({ name, image, occupation, date, address }) {
   return (
     <>
-      <Link href="/" className="group overflow-hidden rounded-2xl shadow">
+      <Link href="/" className="group overflow-hidden rounded-2xl shadow bg-white">
         <div className="relative aspect-square w-full bg-brand overflow-hidden">
           {image && (
             <Image

@@ -12,3 +12,15 @@ body {
     color: var(--foreground);
     background: var(--background);
 }
+
+.bg-gradient {
+    background: linear-gradient(to right, #800709, #9b0d0d, #c51114);
+  }
+
+
+
+@layer utilities {
+    .text-gradient {
+
+    }
+  }
