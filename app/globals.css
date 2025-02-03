@@ -17,6 +17,10 @@ body {
     background: linear-gradient(to right, #800709, #9b0d0d, #c51114);
   }
 
+  .bg-gradient-light {
+    background: linear-gradient(to right, #e00f13, #d31c1c, #de4c4e);
+  }
+
 
 
 @layer utilities {

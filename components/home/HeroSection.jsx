@@ -1,10 +1,10 @@
 import BannerText from "../utils/BannerText";
 
-function HeroSection({ dictionary, lang }) {
+function HeroSection({ dictionary }) {
   return (
     <>
       <div
-        className="h-60 md:h-72 xl:h-96 bg-[url('/july-banner.svg')] bg-cover bg-center bg-no-repeat"
+        className="h-44 sm:h-52 md:h-72 xl:h-96 bg-[url('/july-banner.svg')] bg-cover bg-center bg-no-repeat"
       >
         <div className="container">
           <div className="flex w-full  items-start md:flex-row p-[5%] pb-0 pl-0">
