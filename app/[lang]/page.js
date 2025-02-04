@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import EventsPage from "@/components/home/events/EventsPage";
 import HeroSection from "@/components/home/HeroSection";
 import InjuredSection from "@/components/home/InjuredSection";
@@ -20,6 +21,7 @@ export default async function Home({ params }) {
       <InjuredSection dictionary={dictionary} lang={lang}/>
       <EventsPage dictionary={dictionary} lang={lang} />
       <GrafitiSlider dictionary={dictionary}/>
+      <Footer dictionary={dictionary} />
     </>
   );
 }
