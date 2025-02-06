@@ -14,6 +14,7 @@ function ItemCard({ name, image, occupation, date, address }) {
               className="aspect-square w-full object-cover group-hover:scale-105 transition-all"
               priority
               sizes={100}
+              
             />
           )}
         </div>

@@ -1,8 +1,15 @@
+"use client";
+import Link from "next/link";
 import BloodBackground from "../common/BloodBackground";
 import Headline from "../common/Headline";
 import ItemCard from "../common/ItemCard";
 import martyrList from "@/database/martyrs.json";
+import { usePathname } from "next/navigation";
+
 function MartyrSection({ dictionary }) {
+  const pathname = usePathname();
+  const displayedMartyrList = !pathname.includes("martyrs") ? martyrList.slice(0, 5) : martyrList;
+
   return (
     <section className="my-16">
       {/* Headline Section */}
@@ -12,10 +19,16 @@ function MartyrSection({ dictionary }) {
       <BloodBackground>
         <div className="container">
           <div className="flex w-full justify-end text-white pt-2 cursor-pointer">
-            <span className="bg-gradient p-1 px-2 rounded-sm">{dictionary.more} {'>>'}</span>
+            {!pathname.includes("martyrs") && (
+              <Link href="/martyrs">
+                <span className="bg-gradient p-1 px-2 rounded-sm">
+                  {dictionary.more} {'>>'}
+                </span>
+              </Link>
+            )}
           </div>
           <div className="mt-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {martyrList.map((martyr, index) =>
+            {displayedMartyrList.map((martyr, index) =>
               martyr.name ? ( // Avoid rendering empty objects
                 <ItemCard
                   key={index}
@@ -28,7 +41,6 @@ function MartyrSection({ dictionary }) {
               ) : null
             )}
           </div>
-
         </div>
       </BloodBackground>
     </section>

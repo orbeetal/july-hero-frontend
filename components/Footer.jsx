@@ -5,7 +5,7 @@ const Footer = ({dictionary}) => {
   const year = new Date().getFullYear();
   return (
     <BloodBackground>
-      <footer style={{ backgroundColor: 'rgba(290, 15, 15, 0.7)' }} className="text-white py-8 px-4 md:px-12 lg:px-[10%]">
+      <footer style={{ backgroundColor: 'rgba(163, 29, 29, 0.8)' }} className="text-white py-8 px-4 md:px-12 lg:px-[10%]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
         {/* Left: Logo */}
