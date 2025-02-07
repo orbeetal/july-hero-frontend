@@ -16,7 +16,6 @@ export default async function Home({ params }) {
     <>
       <NavMenu dictionary={dictionary}/>
       <InjuredSection dictionary={dictionary} lang={lang}/>
-
     </>
   );
 }

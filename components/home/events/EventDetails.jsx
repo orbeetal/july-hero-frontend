@@ -7,9 +7,11 @@ const EventDetails = ({ selectedDate, events }) => {
   };
 
   return (
-    <div className="p-6 bg-white shadow-lg rounded-lg w-full md:w-1/2">
+    <div className="p-6 bg-white shadow-lg rounded-lg w-full md:w-1/2 h-full overflow-hidden">
       <h2 className="text-2xl font-bold text-gray-800">{event.title}</h2>
-      <p className="text-gray-600 mt-2">{event.description}</p>
+      <p className="text-gray-600 mt-2 overflow-y-auto max-h-full text-justify custom-scrollbar">
+        {event.description}
+      </p>
     </div>
   );
 };

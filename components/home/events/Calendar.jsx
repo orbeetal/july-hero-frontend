@@ -10,7 +10,7 @@ const Calendar = ({ selectedDate, setSelectedDate, lang }) => {
     <div className="grid grid-cols-7 gap-2 p-6 bg-white shadow-lg rounded-lg w-full md:w-1/2">
       {/* Header */}
       {days.map((day) => (
-        <div key={day} className="text-center text-[10px] sm:text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] bg-gradient-light p-1 rounded-md font-bold text-white">
+        <div key={day} className="text-center flex justify-center items-center text-[10px] sm:text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] bg-gradient-light p-1 rounded-md font-bold text-white">
           {day}
         </div>
       ))}
