@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import EventsPage from "@/components/home/events/EventsPage";
 import HeroSection from "@/components/home/HeroSection";
 import InjuredSection from "@/components/home/InjuredSection";
@@ -14,7 +15,7 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <NavMenu dictionary={dictionary}/>
+      <Header dictionary={dictionary}/>
       <InjuredSection dictionary={dictionary} lang={lang}/>
     </>
   );

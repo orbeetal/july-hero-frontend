@@ -20,7 +20,6 @@ export default function RootLayout({ children }) {
             <body
                 className={`${notoSansBengali.variable} antialiased min-h-screen flex flex-col justify-between`}
             >
-                <Header />
                 <main>{children}</main>
                 
             </body>
