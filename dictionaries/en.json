@@ -1,5 +1,24 @@
 {
   "martyr": "Martyrs",
   "injured": "Injured",
-  "submitInformation": "Submit Information"
+  "submitInformation": "Submit Information",
+  "bannerText": "The blood of martyrs <br/> will never be in vain.",
+  "martyrsHeadline": "List of <span className='text-brand'>Martyrs</span> in The Movment",
+  "injuredHeadline": "List of <span className='text-brand'>Injured</span> in The Movment",
+  "more": "see more",
+  "statsMHeader": "Total Martyrs",
+  "statsIHeader": "Total Injured",
+  "statsMdesc": "Tragically, more than 500 students and phildren have lost their lives in the struggle for justice and equality. We honor their bravery and sacrifice.",
+  "statsIdesc": "Tragically, more than 500 students and phildren have lost their lives in the struggle for justice and equality. We honor their bravery and sacrifice.",
+  "home": "Home",
+  "martyrs": "Martyrs",
+  "injuredMenu": "Injured",
+  "murderers": "Murderers",
+  "events": "Events",
+  "graffiti": "Graffiti",
+  "contact": "Contact Us",
+  "pages": "Pages",
+  "phone": "Phone",
+  "email": "Email"
+
 }

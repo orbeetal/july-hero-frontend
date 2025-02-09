@@ -1,53 +1,49 @@
+"use client";
+import Link from "next/link";
+import BloodBackground from "../common/BloodBackground";
 import Headline from "../common/Headline";
 import ItemCard from "../common/ItemCard";
+import martyrList from "@/database/martyrs.json";
+import { usePathname } from "next/navigation";
 
-function MartyrSection() {
+function MartyrSection({ dictionary }) {
+  const pathname = usePathname();
+  const displayedMartyrList = !pathname.includes("martyrs") ? martyrList.slice(0, 5) : martyrList;
+
   return (
-    <>
-      <section className="my-16">
+    <section className="my-16">
+      {/* Headline Section */}
+      <Headline header={dictionary.martyrsHeadline} />
+
+      {/* Background with Blood Effect */}
+      <BloodBackground>
         <div className="container">
-          <Headline>
-            List of <span className="text-brand">Martyrs</span> in the Movement
-          </Headline>
+          <div className="flex w-full justify-end text-white pt-2 cursor-pointer">
+            {!pathname.includes("martyrs") && (
+              <Link href="/martyrs">
+                <span className="bg-gradient p-1 px-2 rounded-sm">
+                  {dictionary.more} {'>>'}
+                </span>
+              </Link>
+            )}
+          </div>
           <div className="mt-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            <ItemCard
-              image={"https://shohid.info/shohid/abu-sayed.jpg"}
-              name={"Abu Sayed"}
-              occupation={"Student"}
-              address={"Begum Rokeya University, Rangpur"}
-              date={"16th July, 2024"}
-            />
-            <ItemCard
-              image={"https://shohid.info/shohid/faisal-ahmed-shanto.jpg"}
-              name={"Faisal Ahmed Shanto"}
-              occupation={"Student"}
-              address={"Omargani M.E.S. College, Chittagong"}
-              date={"16th July, 2024"}
-            />
-            <ItemCard
-              name={"Abu Sayed"}
-              occupation={"Student"}
-              address={"Begum Rokeya University, Rangpur"}
-              date={"16th July, 2024"}
-            />
-            <ItemCard
-              image={"https://shohid.info/shohid/abu-sayed.jpg"}
-              name={"Abu Sayed"}
-              occupation={"Student"}
-              address={"Begum Rokeya University, Rangpur"}
-              date={"16th July, 2024"}
-            />
-            <ItemCard
-              image={"https://shohid.info/shohid/faisal-ahmed-shanto.jpg"}
-              name={"Faisal Ahmed Shanto"}
-              occupation={"Student"}
-              address={"Omargani M.E.S. College, Chittagong"}
-              date={"16th July, 2024"}
-            />
+            {displayedMartyrList.map((martyr, index) =>
+              martyr.name ? ( // Avoid rendering empty objects
+                <ItemCard
+                  key={index}
+                  image={martyr.image || "/placeholder.jpg"} // Default image if empty
+                  name={martyr.name}
+                  occupation={martyr.occupation}
+                  address={martyr.address}
+                  date={martyr.date}
+                />
+              ) : null
+            )}
           </div>
         </div>
-      </section>
-    </>
+      </BloodBackground>
+    </section>
   );
 }
 
