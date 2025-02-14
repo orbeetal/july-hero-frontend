@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react"; // Icons for hamburger and close button
 import BloodBackground from "./common/BloodBackground";
-
+import Image from "next/image";
+import logo from "@/public/july-heros.svg"
 function Header({ dictionary }) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -23,14 +24,23 @@ function Header({ dictionary }) {
   return (
     <>
       <header className="sticky top-0 z-50 border-b bg-white text-brand">
-        <div className="container flex items-center justify-between p-4">
+        <div className="container flex items-center justify-between p-4 py-1 sm:py-2 md:py-4">
           {/* Logo */}
           <Link
             href="/"
-            className="flex flex-col items-center border border-brand px-1 uppercase text-brand"
+            className="flex flex-col items-center px-1 uppercase text-brand"
           >
-            <span className="text-[16px] font-bold md:text-[20px]">July</span>
-            <span className="text-[14px] md:text-[18px]">Hero</span>
+            <div className="relative aspect-square h-12 sm:h-16 lg:h-20 w-full bg-brand overflow-hidden">
+                        <Image
+                          src='/july-heros.svg'
+                          alt={logo}
+                          fill
+                          className="aspect-square w-full object-cover group-hover:scale-105 transition-all"
+                          priority
+                          sizes={100}
+                          
+                        />
+                    </div>
           </Link>
 
           {/* Desktop Navigation */}
