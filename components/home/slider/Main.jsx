@@ -5,7 +5,7 @@ import ImageSlider from "@/components/home/slider/Slider";
 export default function GrafitiSlider({dictionary}) {
     return (
         <BloodBackground>
-            <div className="container">
+            <div className="container pt-6">
                 <div className="flex flex-col items-center">
                     <Headline header={dictionary.graffiti}/>
                     <ImageSlider />

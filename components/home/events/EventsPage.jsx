@@ -12,14 +12,14 @@ const EventsPage = ({ dictionary, lang }) => {
 
 
     return (
-            <BloodBackground>
-           <div className="container p-3">
-           <Headline header={dictionary.events}/>
-            <div className=" flex flex-col md:flex-row gap-6 p-6 bg-[#f2f3f6d0] opacity-75 bg-opacity-45 h-[900px] md:h-[500px] rounded-lg">
-                <Calendar selectedDate={selectedDate} lang={lang} setSelectedDate={setSelectedDate} />
-                <EventDetails selectedDate={selectedDate} events={events} />
+        <BloodBackground>
+            <div className="container p-3 bg-[#f2f3f6d0] opacity-75 bg-opacity-45 rounded-lg">
+                <Headline header={dictionary.events} />
+                <div className=" flex flex-col md:flex-row gap-6 p-6  h-[900px] md:h-[500px] ">
+                    <Calendar selectedDate={selectedDate} lang={lang} setSelectedDate={setSelectedDate} />
+                    <EventDetails selectedDate={selectedDate} events={events} />
+                </div>
             </div>
-           </div>
         </BloodBackground>
 
     );
