@@ -32,29 +32,29 @@ const MartyrsDetailsPage = ({ slug, lang }) => {
 
             {/* Martyr Details */}
             <div className="text-center">
-                <h1 className="text-3xl font-bold text-gray-900">{martyr?.name || "Unknown"}</h1>
-                <p className="text-gray-600 text-lg">{martyr?.age || "N/A"}</p>
+                <h1 className="text-3xl font-bold text-brand">{martyr?.name || "Unknown"}</h1>
+                <p className="text-lg text-gray-600">{martyr?.age || "N/A"}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t pt-4">
                 <div>
-                    <p className="font-semibold text-gray-700">Occupation:</p>
+                    <p className="font-semibold text-brand">Occupation:</p>
                     <p className="text-gray-800">{martyr?.occupation || "N/A"}</p>
                 </div>
                 <div>
-                    <p className="font-semibold text-gray-700">Institution:</p>
+                    <p className="font-semibold text-brand">Institution:</p>
                     <p className="text-gray-800">{martyr?.institution || "N/A"}</p>
                 </div>
                 <div>
-                    <p className="font-semibold text-gray-700">Department:</p>
+                    <p className="font-semibold text-brand">Department:</p>
                     <p className="text-gray-800">{martyr?.department || "N/A"}</p>
                 </div>
                 <div>
-                    <p className="font-semibold text-gray-700">Address:</p>
+                    <p className="font-semibold text-brand">Address:</p>
                     <p className="text-gray-800">{martyr?.address || "N/A"}</p>
                 </div>
                 <div>
-                    <p className="font-semibold text-gray-700">Incident Date:</p>
+                    <p className="font-semibold text-brand">Incident Date:</p>
                     <p className="text-gray-800">{martyr?.incident_date || "N/A"}</p>
                 </div>
             </div>
@@ -62,7 +62,7 @@ const MartyrsDetailsPage = ({ slug, lang }) => {
             {/* Biography Section */}
             {martyr?.biography && (
                 <div className="mt-6 border-t pt-4">
-                    <h2 className="text-xl font-semibold text-gray-900">Biography</h2>
+                    <h2 className="text-xl font-semibold text-brand">Biography</h2>
                     <p className="text-gray-700 mt-2">{martyr?.biography}</p>
                 </div>
             )}
@@ -70,7 +70,7 @@ const MartyrsDetailsPage = ({ slug, lang }) => {
             {/* Incident Section */}
             {martyr?.incident && (
                 <div className="mt-6 border-t pt-4">
-                    <h2 className="text-xl font-semibold text-gray-900">Incident Details</h2>
+                    <h2 className="text-xl font-semibold text-brand">Incident Details</h2>
                     <p className="text-gray-700 mt-2">{martyr?.incident}</p>
                 </div>
             )}
