@@ -28,29 +28,31 @@ function HeroSection({ dictionary }) {
   };
 
   const handleFileChange = (e) => {
-    setFormData({ ...formData, files: e.target.files });
+    const selectedFiles = Array.from(e.target.files); // Convert FileList to Array
+    setFormData((prev) => ({ ...prev, files: selectedFiles }));
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     console.log("Form Data Submitted:", formData);
-    
+
     const formDataToSend = new FormData();
     formDataToSend.append("name", formData.name);
     formDataToSend.append("category", formData.category);
     formDataToSend.append("description", formData.description);
-    
-    for (let file of formData.files) {
+
+    formData.files.forEach((file) => {
       formDataToSend.append("files", file);
-    }
+    });
 
     try {
       const response = await fetch("/api/submit", {
         method: "POST",
         body: formDataToSend,
       });
-      
+
       if (response.ok) {
         console.log("Submission successful");
         setIsModalOpen(false);
@@ -61,6 +63,7 @@ function HeroSection({ dictionary }) {
       console.error("Error submitting form:", error);
     }
   };
+
 
   return (
     <>
@@ -73,7 +76,7 @@ function HeroSection({ dictionary }) {
         ariaHideApp={false}
       >
         <BloodBackground>
-          <form className="p-8 text-white " style={{ backgroundColor: 'rgba(133, 15, 15, 0.6)' }} onSubmit={handleSubmit}>
+          <form className="p-8 text-white " style={{ backgroundColor: 'rgba(133, 15, 15, 0.8)' }} onSubmit={handleSubmit}>
             <div className="mb-4">
               <label className="block text-sm font-bold mb-2" htmlFor="name">
                 Name
@@ -125,6 +128,7 @@ function HeroSection({ dictionary }) {
                 multiple
                 onChange={handleFileChange}
               />
+
             </div>
             <div className="flex items-center justify-between">
               <button

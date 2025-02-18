@@ -1,13 +1,28 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import BloodBackground from "../common/BloodBackground";
 import Headline from "../common/Headline";
-import ItemCard from "../common/ItemCard";
-import martyrList from "@/database/martyrs.json";
 import { usePathname } from "next/navigation";
+import { useGetMartyrsQuery } from "@/redux/features/julyApi";
+import Loading from "../common/Loader";
+import MartyrsItemCard from "../common/MartyrsCard";
 
-function MartyrSection({ dictionary }) {
+function MartyrSection({ dictionary, lang }) {
+  const [martyrList, setMartyrsList] = useState([]);
+  const { data, error, isLoading, isSuccess } = useGetMartyrsQuery(lang);
   const pathname = usePathname();
+  console.log(lang);
+  // Use useEffect to update state only when data changes
+  useEffect(() => {
+    if (isSuccess && data?.data) {
+      setMartyrsList(data.data);
+    }
+  }, [isSuccess, data]); // Runs only when `isSuccess` or `data` changes
+
+  if (isLoading) return <Loading />;
+  if (error) return <div>Error loading data...</div>;
+
   const displayedMartyrList = !pathname.includes("martyrs") ? martyrList.slice(0, 5) : martyrList;
 
   return (
@@ -28,15 +43,16 @@ function MartyrSection({ dictionary }) {
             )}
           </div>
           <div className="mt-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {displayedMartyrList.map((martyr, index) =>
+            {displayedMartyrList?.map((martyr, index) =>
               martyr.name ? ( // Avoid rendering empty objects
-                <ItemCard
-                  key={index}
+                <MartyrsItemCard
+                  id={martyr.id}
+                  key={martyr.id}
                   image={martyr.image || "/placeholder.jpg"} // Default image if empty
                   name={martyr.name}
                   occupation={martyr.occupation}
                   address={martyr.address}
-                  date={martyr.date}
+                  date={martyr.incident_date}
                 />
               ) : null
             )}

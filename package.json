@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.10",
+    "@reduxjs/toolkit": "^2.5.1",
     "@tanstack/react-virtual": "^3.12.0",
     "lucide-react": "^0.475.0",
     "negotiator": "^1.0.0",
@@ -19,9 +20,10 @@
     "react-icons": "^5.4.0",
     "react-intersection-observer": "^9.15.1",
     "react-modal": "^3.16.3",
+    "react-redux": "^9.2.0",
     "react-virtuoso": "^4.12.3",
     "react-window": "^1.8.11",
-    "swiper": "^11.2.2"
+    "swiper": "^11.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

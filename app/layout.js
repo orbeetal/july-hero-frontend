@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Noto_Sans_Bengali } from 'next/font/google';
 import './globals.css';
+import { Providers } from '@/providers/provider';
 
 const notoSansBengali = Noto_Sans_Bengali({
     variable: '--font-noto-sans-bengali',
@@ -15,13 +16,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
     return (
         <html lang="en">
             <body
                 className={`${notoSansBengali.variable} antialiased min-h-screen flex flex-col justify-between`}
             >
-                <main>{children}</main>
-                
+                <Providers>
+                    <main>{children}</main>
+                </Providers>
+
             </body>
         </html>
     );

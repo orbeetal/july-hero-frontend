@@ -2,7 +2,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import EventsPage from "@/components/home/events/EventsPage";
 import BannerSection from "@/components/home/EventsBanner";
-import NavMenu from "@/components/Nav";
 import { getDictionary } from "@/dictionaries";
 
 export default async function Home({ params }) {

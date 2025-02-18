@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function ItemCard({ id, name, image, occupation, date, address }) {
+function MartyrsItemCard({ id, name, image, occupation, date, address }) {
   return (
     <>
-      <Link href={`/${id}`} className="group overflow-hidden rounded-2xl shadow bg-white">
+      <Link href={`/martyrs/${id}`} className="group overflow-hidden rounded-2xl shadow bg-white">
         <div className="relative aspect-square w-full bg-brand overflow-hidden">
           {image && (
             <Image
@@ -29,4 +29,4 @@ function ItemCard({ id, name, image, occupation, date, address }) {
   );
 }
 
-export default ItemCard;
+export default MartyrsItemCard;
