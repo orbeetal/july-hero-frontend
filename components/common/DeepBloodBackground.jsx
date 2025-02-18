@@ -1,20 +1,18 @@
-import React from "react";
-
 function DeepBloodBackground({ children }) {
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative h-full w-full overflow-hidden">
       {/* Left Blood Image */}
       <img
         src="/left-deep-blood.svg"
         alt="Blood Left"
-        className="absolute top-0 left-0 w-[150px] md:w-[250px] opacity-80"
+        className="absolute left-0 top-1/2 w-[150px] -translate-y-1/2 opacity-80 md:w-[250px]"
       />
-      
+
       {/* Right Blood Image */}
       <img
         src="/right-deep-blood.svg"
         alt="Blood Right"
-        className="absolute top-0 right-0 w-[150px] md:w-[250px] opacity-80"
+        className="absolute right-0 top-1/2 w-[150px] -translate-y-1/2 opacity-80 md:w-[250px]"
       />
 
       {/* Content Inside */}

@@ -1,12 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useGetInjuredQuery } from "@/redux/features/julyApi"; // Fetch data from API
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import DeepBloodBackground from "../common/DeepBloodBackground";
 import Headline from "../common/Headline";
-import { usePathname } from "next/navigation";
-import { useGetInjuredQuery } from "@/redux/features/julyApi"; // Fetch data from API
-import Loading from "../common/Loader";
 import InjuredItemCard from "../common/InjuredCard";
+import Loading from "../common/Loader";
 
 function InjuredSection({ dictionary, lang }) {
   const [injuredList, setInjuredList] = useState([]);
@@ -23,24 +23,17 @@ function InjuredSection({ dictionary, lang }) {
   if (isLoading) return <Loading />;
   if (error) return <div>Error loading data...</div>;
 
-  const displayedInjuredList = !pathname.includes("injured") ? injuredList.slice(0, 5) : injuredList;
+  const displayedInjuredList = !pathname.includes("injured")
+    ? injuredList.slice(0, 5)
+    : injuredList;
 
   return (
-    <section className="my-16">
+    <section className="my-12">
       <Headline header={dictionary.injuredHeadline} />
       <DeepBloodBackground>
         <div className="container">
-          <div className="flex w-full justify-end text-white pt-2 cursor-pointer">
-            {!pathname.includes("injured") && (
-              <Link href="/injured">
-                <span className="bg-gradient p-1 px-2 rounded-sm">
-                  {dictionary.more} {'>>'}
-                </span>
-              </Link>
-            )}
-          </div>
-          <div className="mt-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {displayedInjuredList.map((injured, index) => (
+          <div className="my-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {displayedInjuredList.map((injured, index) =>
               injured.name ? ( // Avoid rendering empty objects
                 <InjuredItemCard
                   id={injured.id}
@@ -51,9 +44,19 @@ function InjuredSection({ dictionary, lang }) {
                   address={injured.address}
                   date={injured.incident_date}
                 />
-              ) : null
-            ))}
+              ) : null,
+            )}
           </div>
+          {!pathname.includes("injured") && (
+            <div className="flex w-full cursor-pointer justify-center text-white">
+              <Link
+                href="/injured"
+                className="rounded bg-brand px-4 py-2 text-sm text-white md:px-6 md:text-base"
+              >
+                {dictionary.more} {">>"}
+              </Link>
+            </div>
+          )}
         </div>
       </DeepBloodBackground>
     </section>

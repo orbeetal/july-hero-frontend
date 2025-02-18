@@ -1,22 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
+import CardImage from "./CardImage";
 
 function MartyrsItemCard({ id, name, image, occupation, date, address }) {
   return (
     <>
-      <Link href={`/martyrs/${id}`} className="group overflow-hidden rounded-2xl shadow bg-white">
-        <div className="relative aspect-square w-full bg-brand overflow-hidden">
-          {image && (
-            <Image
-              src={image}
-              alt={name}
-              fill
-              className="aspect-square w-full object-cover group-hover:scale-105 transition-all"
-              priority
-              sizes={100}
-              
-            />
-          )}
+      <Link
+        href={`/martyrs/${id}`}
+        className="group overflow-hidden rounded-2xl bg-white shadow"
+      >
+        <div className="relative aspect-square w-full overflow-hidden bg-brand">
+          {image && <CardImage src={image} alt={name} />}
         </div>
         <div className="px-2 py-2">
           <h3 className="font-bold">{name}</h3>

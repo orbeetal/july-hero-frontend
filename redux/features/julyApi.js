@@ -9,7 +9,7 @@ export const julyApi = apiSlice.injectEndpoints({
             query: ({slug, lang}) => `martyrs/${slug}?lang=${lang}`,
         }),
         getInjured: builder.query({
-            query: () => `injured`,
+            query: (lang) => `injured?lang=${lang}`,
         }),
         getInjuredBySlug: builder.query({
             query: ({slug, lang}) => `injured/${slug}?lang=${lang}`,

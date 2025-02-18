@@ -20,7 +20,9 @@ export default async function Home({ params }) {
       {/* <HeroSection dictionary={dictionary} /> */}
       <StatsSection dictionary={dictionary} lang={lang} />
       <MartyrSection dictionary={dictionary} lang={lang}/>
+      <div className="h-12"></div>
       <InjuredSection dictionary={dictionary} lang={lang}/>
+      <div className="h-12"></div>
       <EventsPage dictionary={dictionary} lang={lang} />
       <GrafitiSlider dictionary={dictionary}/>
       <Footer dictionary={dictionary} />
