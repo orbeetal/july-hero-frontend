@@ -1,0 +1,24 @@
+{
+    "1": {
+      "title": "Urban Expression",
+      "image": "/images/graffiti1.jpg",
+      "details": "A stunning street artwork expressing urban culture.",
+      "plots": "This graffiti was made using spray paint with a mix of abstract and realism.",
+      "location": "Brooklyn, NY"
+    },
+    "2": {
+      "title": "Street Vibes",
+      "image": "/images/graffiti2.jpg",
+      "details": "A vibrant display of street creativity.",
+      "plots": "Features a combination of freehand and stencil techniques.",
+      "location": "Los Angeles, CA"
+    },
+    "3": {
+      "title": "Wall of Colors",
+      "image": "/images/graffiti3.jpg",
+      "details": "A colorful masterpiece covering an entire street wall.",
+      "plots": "Created by a group of artists in a community project.",
+      "location": "Miami, FL"
+    }
+  }
+  

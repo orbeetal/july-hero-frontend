@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BloodBackground from "./common/BloodBackground";
 import logo from "@/public/july-heros-footer.svg"
+import Link from "next/link";
 const Footer = ({ dictionary }) => {
   const year = new Date().getFullYear();
   return (
@@ -27,9 +28,9 @@ const Footer = ({ dictionary }) => {
             <div>
               <h3 className="text-lg font-semibold mb-3">{dictionary.pages}</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-gray-300">{dictionary.martyrs}</a></li>
-                <li><a href="#" className="hover:text-gray-300">{dictionary.injuredMenu}</a></li>
-                <li><a href="#" className="hover:text-gray-300">{dictionary.murderers}</a></li>
+                <li><Link href="/martyrs" className="hover:text-gray-300">{dictionary.martyrs}</Link></li>
+                <li><Link href="/injured" className="hover:text-gray-300">{dictionary.injuredMenu}</Link></li>
+                <li><Link href="/murderers" className="hover:text-gray-300">{dictionary.murderers}</Link></li>
               </ul>
             </div>
             <div>
