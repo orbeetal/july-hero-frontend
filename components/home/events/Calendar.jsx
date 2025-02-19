@@ -1,38 +1,52 @@
-import React from "react";
-
 const Calendar = ({ selectedDate, setSelectedDate, lang }) => {
   const daysInJuly = 36;
-  const startDay = 1; // Monday
-  const days = lang === "bn" ? ["শনি", "রবি", " সোম", "মঙ্গল", " বুধ", "বৃহস", " শুক্র"] : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const startDay = 3; // Monday
+  const days =
+    lang === "bn"
+      ? ["শনি", "রবি", "সোম", "মঙ্গল", "বুধ", "বৃহঃ", "শুক্র"]
+      : ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+
   const daysArray = Array.from({ length: daysInJuly }, (_, i) => i + 1);
 
   return (
-    <div className="grid grid-cols-12 gap-2 p-4 bg-white shadow rounded-lg w-full border">
+    <div className="grid w-full grid-cols-7 gap-2 rounded-lg border bg-white p-4 shadow md:grid-cols-14">
       {/* Header */}
-      {/* {days.map((day) => (
-        <div key={day} className="text-center flex justify-center items-center text-[10px] sm:text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] bg-gradient-light p-1 rounded-md font-bold text-white">
+      {days.map((day) => (
+        <div
+          key={day}
+          className="bg-gradient-light flex items-center justify-center rounded-md p-1 text-center text-[10px] font-bold text-white sm:text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]"
+        >
           {day}
         </div>
-      ))} */}
+      ))}
+      {days.map((day) => (
+        <div
+          key={day}
+          className="hidden md:block bg-gradient-light flex items-center justify-center rounded-md p-1 text-center text-[10px] font-bold text-white sm:text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]"
+        >
+          {day}
+        </div>
+      ))}
 
       {/* Empty Spaces for Alignment */}
-      {/* {Array.from({ length: startDay - 1 }).map((_, i) => (
+      {Array.from({ length: startDay - 1 }).map((_, i) => (
         <div key={`empty-${i}`} />
-      ))} */}
+      ))}
 
       {/* Dates */}
       {daysArray.map((day) => (
         <button
           key={day}
-          className={`p-1 sm:p-3 md:p-2 lg:p-3 text-[12px] sm:text-[14px] lg:text-[16px] rounded-lg text-center font-medium transition ${
+          className={`rounded-lg p-1 text-center text-[12px] font-medium transition sm:p-3 sm:text-[14px] md:p-2 lg:p-3 lg:text-[16px] ${
             selectedDate === day
               ? "bg-red-700 text-white"
               : "bg-white hover:bg-gray-200"
-          }`}   
+          }`}
           onClick={() => setSelectedDate(day)}
         >
-          {day < 10 ? `${Number(0).toLocaleString(lang === "bn" ? "bn-BD" : "en")}${Number(day).toLocaleString(lang === "bn" ? "bn-BD" : "en")}` 
-          : Number(day).toLocaleString(lang === "bn" ? "bn-BD" : "en")}
+          {day < 10
+            ? `${Number(0).toLocaleString(lang === "bn" ? "bn-BD" : "en")}${Number(day).toLocaleString(lang === "bn" ? "bn-BD" : "en")}`
+            : Number(day).toLocaleString(lang === "bn" ? "bn-BD" : "en")}
         </button>
       ))}
     </div>
