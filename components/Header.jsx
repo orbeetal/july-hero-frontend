@@ -30,9 +30,9 @@ function Header({ dictionary }) {
             href="/"
             className="flex flex-col items-center px-1 uppercase text-brand"
           >
-            <div className="relative aspect-square h-12 sm:h-16 lg:h-20 w-full bg-brand overflow-hidden">
+            <div className="relative aspect-square h-12 sm:h-16 lg:h-20 w-full overflow-hidden">
                         <Image
-                          src='/july-heros.svg'
+                          src='/logo.svg'
                           alt={logo}
                           fill
                           className="aspect-square w-full object-cover group-hover:scale-105 transition-all"
