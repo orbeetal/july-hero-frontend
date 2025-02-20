@@ -24,7 +24,7 @@ function Header({ dictionary }) {
   return (
     <>
       <header className="sticky top-0 z-50 border-b bg-white text-brand">
-        <div className="container flex items-center justify-between p-4 py-1 sm:py-2 md:py-4">
+        <div className="container flex items-center justify-between p-4 py-1 sm:py-0">
           {/* Logo */}
           <Link
             href="/"
