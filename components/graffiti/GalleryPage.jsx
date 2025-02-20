@@ -10,7 +10,6 @@ export default function GraffitiPage() {
   if (isLoading) return <Loading />;
   if (error)
     return <p className="text-red-500 text-center">Error fetching graffiti...</p>;
-  console.log(graffiti);
   return (
     <div className="min-h-screen bg-white text-gray-800 p-6 sm:p-8">
       <h1 className="text-3xl font-bold text-center mb-6 text-[#cc3333]">

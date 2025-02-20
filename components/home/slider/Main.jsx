@@ -6,6 +6,7 @@ import Link from "next/link";
 
 
 export default function GrafitiSlider({ dictionary }) {
+
   return (
     <DeepBloodBackground>
       <div className="container py-12">
