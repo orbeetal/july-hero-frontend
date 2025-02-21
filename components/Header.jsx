@@ -24,15 +24,15 @@ function Header({ dictionary }) {
   return (
     <>
       <header className="sticky top-0 z-50 border-b bg-white text-brand">
-        <div className="container flex items-center justify-between p-4 py-1 sm:py-2 md:py-4">
+        <div className="container flex items-center justify-between p-4 py-1 sm:py-0">
           {/* Logo */}
           <Link
             href="/"
             className="flex flex-col items-center px-1 uppercase text-brand"
           >
-            <div className="relative aspect-square h-12 sm:h-16 lg:h-20 w-full bg-brand overflow-hidden">
+            <div className="relative aspect-square h-12 sm:h-16 lg:h-20 w-full overflow-hidden">
                         <Image
-                          src='/july-heros.svg'
+                          src='/logo.svg'
                           alt={logo}
                           fill
                           className="aspect-square w-full object-cover group-hover:scale-105 transition-all"

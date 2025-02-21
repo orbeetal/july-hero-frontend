@@ -5,6 +5,8 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useGetGraffitiQuery } from "@/redux/features/julyApi";
+import Loading from "../common/Loader";
 
 const slides = [
   { id: 1, image: "home-slide-1.svg", alt: "Banner 1" },
@@ -13,6 +15,7 @@ const slides = [
 ];
 
 const BannerSlider = () => {
+  
   return (
     <div className="w-full  mx-auto">
       <Swiper
@@ -30,7 +33,7 @@ const BannerSlider = () => {
             <div className="w-full aspect-[16/7] md:aspect-[16/5]">
               <img
                 src={slide.image}
-                alt={slide.alt}
+                alt={slide.image}
                 className="w-full h-full object-cover"
               />
             </div>

@@ -5,6 +5,7 @@
   "bannerText": "The blood of martyrs <br/> will never be in vain.",
   "martyrsHeadline": "List of <span className='text-brand'>Martyrs</span> in The Movment",
   "injuredHeadline": "List of <span className='text-brand'>Injured</span> in The Movment",
+  "murderersHeadline": "List of <span className='text-brand'>Murderers</span> in The Movment",
   "more": "see more",
   "statsMHeader": "Total Martyrs",
   "statsIHeader": "Total Injured",
