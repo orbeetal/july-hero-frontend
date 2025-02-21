@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InjuredSection from "@/components/home/InjuredSection";
+import InjuredSlider from "@/components/slider/InjuredSlider";
 import { getDictionary } from "@/dictionaries";
 
 export default async function Home({ params }) {
@@ -10,6 +11,7 @@ export default async function Home({ params }) {
   return (
     <>
       <Header dictionary={dictionary} />
+      <InjuredSlider />
       <InjuredSection dictionary={dictionary} lang={lang} />
       <Footer dictionary={dictionary}/>
     </>

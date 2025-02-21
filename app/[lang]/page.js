@@ -16,7 +16,7 @@ export default async function Home({ params }) {
   return (
     <>
       <Header dictionary={dictionary}/>
-      <BannerSlider />
+      <BannerSlider params={params} />
       {/* <HeroSection dictionary={dictionary} /> */}
       <StatsSection dictionary={dictionary} lang={lang} />
       <MartyrSection dictionary={dictionary} lang={lang}/>

@@ -22,7 +22,7 @@ const Calendar = ({ selectedDate, setSelectedDate, lang }) => {
       {days.map((day) => (
         <div
           key={day}
-          className="hidden md:block bg-gradient-light flex items-center justify-center rounded-md p-1 text-center text-[10px] font-bold text-white sm:text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]"
+          className=" md:block bg-gradient-light flex items-center justify-center rounded-md p-1 text-center text-[10px] font-bold text-white sm:text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]"
         >
           {day}
         </div>

@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MartyrSection from "@/components/home/MartyrSection";
+import MartyrSlider from "@/components/slider/MartyrSlider";
 import { getDictionary } from "@/dictionaries";
 
 export default async function Home({ params }) {
@@ -9,8 +10,9 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <Header dictionary={dictionary}/>      
-      <MartyrSection dictionary={dictionary} lang={lang}/>
+      <Header dictionary={dictionary} />
+      <MartyrSlider />
+      <MartyrSection dictionary={dictionary} lang={lang} />
       <Footer dictionary={dictionary} />
     </>
   );

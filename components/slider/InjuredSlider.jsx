@@ -5,12 +5,12 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useGetBannerQuery } from "@/redux/features/julyApi";
+import {  useGetInjuredBannerQuery } from "@/redux/features/julyApi";
 import Loading from "../common/Loader";
 
-const BannerSlider = ({ lang = "en", }) => {
+const InjuredSlider = ({ lang = "en",  }) => {
   // Fetch banners using RTK Query
-  const { data: banners, isLoading, isError } = useGetBannerQuery({ lang });
+  const { data: banners, isLoading, isError } = useGetInjuredBannerQuery({ lang });
 
   if (isLoading) return <Loading />;
   if (isError) return <p className="text-red-500 text-center">Failed to load banners</p>;
@@ -43,4 +43,4 @@ const BannerSlider = ({ lang = "en", }) => {
   );
 };
 
-export default BannerSlider;
+export default InjuredSlider;

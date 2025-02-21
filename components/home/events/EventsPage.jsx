@@ -19,7 +19,7 @@ const EventsPage = ({ dictionary, lang }) => {
             lang={lang}
             setSelectedDate={setSelectedDate}
           />
-          <EventDetails selectedDate={selectedDate} events={events} />
+          <EventDetails selectedDate={selectedDate} events={events} lang={lang}/>
         </div>
       </div>
     </BloodBackground>
