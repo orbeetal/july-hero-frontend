@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import EventsPage from "@/components/home/events/EventsPage";
-import BannerSection from "@/components/home/EventsBanner";
+import IncidentsPage from "@/components/home/incidents/IncidentsPage";
+import BannerSection from "@/components/home/IncidentsBanner";
 import { getDictionary } from "@/dictionaries";
 
 export default async function Home({ params }) {
@@ -12,7 +12,7 @@ export default async function Home({ params }) {
     <div className="h-auto">
       <Header dictionary={dictionary}/>
       <BannerSection />
-      <EventsPage dictionary={dictionary} lang={lang} />
+      <IncidentsPage dictionary={dictionary} lang={lang} />
       <Footer dictionary={dictionary} />
     </div>
   );

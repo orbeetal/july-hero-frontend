@@ -35,8 +35,8 @@ export const julyApi = apiSlice.injectEndpoints({
         getInjuredBanner: builder.query({
             query: ({ lang }) => `page/injured/banners?lang=${lang}`,
         }),
-        getEventById: builder.query({
-            query: ({ selectedDate, lang }) => `events/${selectedDate}?lang=${lang}`,
+        getIncidentById: builder.query({
+            query: ({ selectedDate, lang }) => `incidents/${selectedDate}?lang=${lang}`,
         }),
 
     }),
@@ -55,5 +55,5 @@ export const {
     useGetBannerQuery,
     useGetMartyrBannerQuery,
     useGetInjuredBannerQuery,
-    useGetEventByIdQuery,
+    useGetIncidentByIdQuery,
 } = julyApi;

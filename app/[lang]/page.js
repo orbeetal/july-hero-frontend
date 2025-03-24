@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import EventsPage from "@/components/home/events/EventsPage";
-import HeroSection from "@/components/home/HeroSection";
+import IncidentsPage from "@/components/home/incidents/IncidentsPage";
 import InjuredSection from "@/components/home/InjuredSection";
 import MartyrSection from "@/components/home/MartyrSection";
 import GrafitiSlider from "@/components/home/slider/Main";
@@ -15,16 +14,16 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <Header dictionary={dictionary}/>
+      <Header dictionary={dictionary} />
       <BannerSlider params={params} />
       {/* <HeroSection dictionary={dictionary} /> */}
       <StatsSection dictionary={dictionary} lang={lang} />
-      <MartyrSection dictionary={dictionary} lang={lang}/>
+      <MartyrSection dictionary={dictionary} lang={lang} />
       <div className="h-12"></div>
-      <InjuredSection dictionary={dictionary} lang={lang}/>
+      <InjuredSection dictionary={dictionary} lang={lang} />
       <div className="h-12"></div>
-      <EventsPage dictionary={dictionary} lang={lang} />
-      <GrafitiSlider dictionary={dictionary}/>
+      <IncidentsPage dictionary={dictionary} lang={lang} />
+      <GrafitiSlider dictionary={dictionary} />
       <Footer dictionary={dictionary} />
     </>
   );
