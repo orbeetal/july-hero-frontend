@@ -1,6 +1,6 @@
 "use client";
 import Loading from "@/components/common/Loader";
-import { useGetGraffitiQuery } from "@/redux/features/julyApi";
+import { useGetEventsQuery } from "@/redux/features/julyApi";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -8,20 +8,18 @@ import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const images = [
-  { src: "/graffiti-1.svg", name: "টিএসি", location: "ঢাকা বিশ্ববিদ্যালয়" },
-  { src: "/graffiti-2.svg", name: "শাহজালাল বিশ্ববিদ্যালয়", location: "সিলেট" },
-  { src: "/graffiti-3.svg", name: "আনেয়ারা", location: "চট্টগ্রাম" },
-  { src: "/graffiti-4.svg", name: "ব্রাহ্মণবাড়িয়া", location: "কুমিল্লা" },
+  { src: "/event-1.svg", name: "টিএসি", location: "ঢাকা বিশ্ববিদ্যালয়" },
+  { src: "/event-2.svg", name: "শাহজালাল বিশ্ববিদ্যালয়", location: "সিলেট" },
+  { src: "/event-3.svg", name: "আনেয়ারা", location: "চট্টগ্রাম" },
+  { src: "/event-4.svg", name: "ব্রাহ্মণবাড়িয়া", location: "কুমিল্লা" },
 ];
 
 const ImageSlider = ({ lang }) => {
-  const { data: graffiti, error, isLoading } = useGetGraffitiQuery(lang);
+  const { data: events, error, isLoading } = useGetEventsQuery(lang);
 
   if (isLoading) return <Loading />;
   if (error)
-    return (
-      <p className="text-center text-red-500">Error fetching graffiti...</p>
-    );
+    return <p className="text-center text-red-500">Error fetching event...</p>;
   return (
     <div className="flex w-full items-center justify-center py-10">
       <Swiper
@@ -44,7 +42,7 @@ const ImageSlider = ({ lang }) => {
         className="w-[80%] max-w-4xl"
         modules={[EffectCoverflow, Autoplay]}
       >
-        {graffiti?.data?.map((item, index) => (
+        {events?.data?.map((item, index) => (
           <SwiperSlide
             key={index}
             className="relative h-[250px] w-[250px] overflow-hidden rounded-xl shadow-lg md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px]"

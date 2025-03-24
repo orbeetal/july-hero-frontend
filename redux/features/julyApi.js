@@ -26,6 +26,12 @@ export const julyApi = apiSlice.injectEndpoints({
         getGraffitiById: builder.query({
             query: ({ id, lang }) => `graffiti/${id}?lang=${lang}`,
         }),
+        getEvents: builder.query({
+            query: (lang) => `events?lang=${lang}`,
+        }),
+        getEventsById: builder.query({
+            query: ({ id, lang }) => `events/${id}?lang=${lang}`,
+        }),
         getBanner: builder.query({
             query: ({ lang }) => `page/home/banners?lang=${lang}`,
         }),
@@ -50,6 +56,8 @@ export const {
     useGetInjuredBySlugQuery,
     useGetGraffitiQuery,
     useGetGraffitiByIdQuery,
+    useGetEventsQuery,
+    useGetEventsByIdQuery,
     useGetMurderersQuery,
     useGetMurderersBySlugQuery,
     useGetBannerQuery,

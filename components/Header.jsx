@@ -154,8 +154,8 @@ function Header({ dictionary }) {
                 onClick={switchLanguage}
                 className={`h-full w-1/2 px-2 text-sm ${
                   isBengali
-                    ? "bg-white font-semibold text-black"
-                    : "bg-red opacity-75"
+                    ? "bg-red opacity-75"
+                    : "bg-white font-semibold text-black"
                 }`}
               >
                 বাংলা
@@ -164,8 +164,8 @@ function Header({ dictionary }) {
                 onClick={switchLanguage}
                 className={`h-full w-1/2 px-2 text-sm ${
                   !isBengali
-                    ? "bg-white font-semibold text-black"
-                    : "bg-red opacity-75"
+                    ? "bg-red opacity-75"
+                    : "bg-white font-semibold text-black"
                 }`}
               >
                 English
