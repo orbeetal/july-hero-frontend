@@ -10,7 +10,7 @@ export default async function Event({params}) {
   return (
     <>
     <Header dictionary={dictionary} />
-    <EventsPage lang={lang} />
+    <EventsPage lang={lang} dictionary={dictionary} />
     <Footer dictionary={dictionary}/>
    </>
   )

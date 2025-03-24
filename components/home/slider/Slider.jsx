@@ -41,7 +41,7 @@ const ImageSlider = ({ lang }) => {
           modifier: 2.5,
           slideShadows: false,
         }}
-        className="w-[80%] max-w-4xl"
+        className="w-full max-w-4xl"
         modules={[EffectCoverflow, Autoplay]}
       >
         {graffiti?.data?.map((item, index) => (
@@ -57,8 +57,8 @@ const ImageSlider = ({ lang }) => {
             />
 
             {/* Overlay with Name & Location */}
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
-              <h3 className="text-lg font-bold">{item.title}</h3>
+            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-2 md:p-4 text-white">
+              <h3 className="text-sm md:text-lg font-bold">{item.title}</h3>
               <p className="text-sm">{item.location}</p>
             </div>
           </SwiperSlide>

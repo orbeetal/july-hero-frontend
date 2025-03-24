@@ -35,7 +35,7 @@ export default function EventDetailsPage({ id, lang }) {
         <img
           src={details.image}
           alt={details.title}
-          className="mb-4 h-60 w-full rounded-lg object-cover sm:h-72 md:h-80"
+          className="mb-4 w-full rounded-lg object-cover"
         />
         {/* Title */}
         <h1 className="text-xl font-bold text-[#cc3333] sm:text-2xl md:text-3xl">

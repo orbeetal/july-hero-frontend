@@ -65,6 +65,11 @@ function Header({ dictionary }) {
               </Link>
             </li>
             <li>
+              <Link href="/events" className="hover:text-gray-300">
+                {dictionary.events}
+              </Link>
+            </li>
+            <li>
               <Link href="/incidents" className="hover:text-gray-300">
                 {dictionary.incidents}
               </Link>
