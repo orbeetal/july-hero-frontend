@@ -13,7 +13,7 @@ export default function GraffitiPage() {
       <p className="text-center text-red-500">Error fetching graffiti...</p>
     );
   return (
-    <div className="min-h-screen bg-white p-6 text-gray-800 sm:p-8">
+    <div className="container bg-white p-6 text-gray-800 sm:p-8 min-h-[70vh]">
       <h1 className="mb-6 text-center text-3xl font-bold text-[#cc3333]">
         Graffiti Gallery
       </h1>
@@ -27,7 +27,7 @@ export default function GraffitiPage() {
                 alt={art.title}
                 className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 left-0 w-full bg-[#ff6666] bg-opacity-75 p-4 text-center">
+              <div className="absolute bottom-0 left-0 w-full bg-[#ff6666] bg-opacity-75 p-3 text-center">
                 <h2 className="text-lg font-semibold text-white">
                   {art.title}
                 </h2>
