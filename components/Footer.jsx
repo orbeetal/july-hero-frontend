@@ -31,7 +31,7 @@ const Footer = ({ dictionary }) => {
           {/* Right Section: Submit Button */}
           <div className="flex flex-col justify-center items-center md:items-end h-full">
             <button className="self-center md:self-end bg-transparent border border-white text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-[#800709] transition hover:scale-110">
-              Submit Information
+            <a href="https://forms.gle/KWrkwvM6oqqv6Rq77">{dictionary.submitInformation}</a>
             </button>
           </div>
         </div>
