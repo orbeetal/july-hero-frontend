@@ -5,7 +5,7 @@ function BloodBackground({ children }) {
       <img
         src="/left-blood.svg"
         alt="Blood Left"
-        className="absolute left-0 top-1/2 w-[150px] -translate-y-1/2 opacity-80 md:w-[250px]"
+        className="absolute  left-0 top-1/2 w-[150px] -translate-y-1/2 opacity-80 md:w-[250px]"
       />
 
       {/* Right Blood Image */}
