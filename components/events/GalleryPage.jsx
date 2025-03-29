@@ -18,7 +18,7 @@ export default function EventPage({ lang, dictionary }) {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
         {events?.data.map((art) => (
-          <Link key={art.id} href={`/events/${art.id}`} className="block">
+          <Link key={art.id} href={`/${lang}/events/${art.id}`} className="block">
             <div className="group relative overflow-hidden rounded-xl border border-[#ff6666] shadow-lg">
               <img
                 src={art.image}

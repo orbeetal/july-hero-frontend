@@ -11,9 +11,9 @@ const MartyrDetailsWrapper = async ({ params }) => {
 
   return (
     <>
-        <Header dictionary={dictionary}/>
+        <Header dictionary={dictionary} lang={lang} />
         <MartyrsDetailsPage slug={slug} lang={lang} dictionary={dictionary} />
-        <Footer dictionary={dictionary} />
+        <Footer dictionary={dictionary} lang={lang} />
 
     </>
 );

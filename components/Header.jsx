@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import BloodBackground from "./common/BloodBackground";
-function Header({ dictionary }) {
+function Header({ dictionary, lang }) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -27,7 +27,7 @@ function Header({ dictionary }) {
         <div className="container flex items-center justify-between p-4 py-1 sm:py-0">
           {/* Logo */}
           <Link
-            href="/"
+            href={`/${lang}`}
             className="flex flex-col items-center px-1 uppercase text-brand"
           >
             <div className="relative aspect-square h-12 w-full overflow-hidden sm:h-16 lg:h-20">
@@ -45,32 +45,32 @@ function Header({ dictionary }) {
           {/* Desktop Navigation */}
           <ul className="hidden justify-center gap-6 font-semibold sm:flex sm:font-bold">
             <li>
-              <Link href="/" className="hover:text-gray-300">
+              <Link href={`/${lang}`} className="hover:text-gray-300">
                 {dictionary.home}
               </Link>
             </li>
             <li>
-              <Link href="/martyrs" className="hover:text-gray-300">
+              <Link href={`/${lang}/martyrs`} className="hover:text-gray-300">
                 {dictionary.martyrs}
               </Link>
             </li>
             <li>
-              <Link href="/injured" className="hover:text-gray-300">
+              <Link href={`/${lang}/injured`} className="hover:text-gray-300">
                 {dictionary.injuredMenu}
               </Link>
             </li>
             <li>
-              <Link href="/murderers" className="hover:text-gray-300">
+              <Link href={`/${lang}/murderers`} className="hover:text-gray-300">
                 {dictionary.murderers}
               </Link>
             </li>
             <li>
-              <Link href="/events" className="hover:text-gray-300">
+              <Link href={`/${lang}/events`} className="hover:text-gray-300">
                 {dictionary.events}
               </Link>
             </li>
             <li>
-              <Link href="/incidents" className="hover:text-gray-300">
+              <Link href={`/${lang}/incidents`} className="hover:text-gray-300">
                 {dictionary.incidents}
               </Link>
             </li>
@@ -126,27 +126,33 @@ function Header({ dictionary }) {
           {/* Mobile Navigation Links */}
           <ul className="flex flex-col items-center gap-4 p-6 text-lg font-semibold">
             <li>
-              <Link href="/" onClick={() => setIsOpen(false)}>
+              <Link href={`/${lang}$`} onClick={() => setIsOpen(false)}>
                 {dictionary.home}
               </Link>
             </li>
             <li>
-              <Link href="/martyrs" onClick={() => setIsOpen(false)}>
+              <Link href={`/${lang}/martyrs`} onClick={() => setIsOpen(false)}>
                 {dictionary.martyrs}
               </Link>
             </li>
             <li>
-              <Link href="/injured" onClick={() => setIsOpen(false)}>
+              <Link href={`/${lang}/injured`} onClick={() => setIsOpen(false)}>
                 {dictionary.injuredMenu}
               </Link>
             </li>
             <li>
-              <Link href="/murderers" onClick={() => setIsOpen(false)}>
+              <Link
+                href={`/${lang}/murderers`}
+                onClick={() => setIsOpen(false)}
+              >
                 {dictionary.murderers}
               </Link>
             </li>
             <li>
-              <Link href="/incidents" onClick={() => setIsOpen(false)}>
+              <Link
+                href={`/${lang}/incidents`}
+                onClick={() => setIsOpen(false)}
+              >
                 {dictionary.incidents}
               </Link>
             </li>

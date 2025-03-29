@@ -1,9 +1,8 @@
 // src/app/martyrs/[slug]/MartyrDetailsWrapper.js
-import { getDictionary } from "@/dictionaries";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import EventDetailsPage from "@/components/events/EventDetails";
-
+import { getDictionary } from "@/dictionaries";
 
 const EventDetailsWrapper = async ({ params }) => {
   const { id, lang = "en" } = await params;
@@ -11,11 +10,11 @@ const EventDetailsWrapper = async ({ params }) => {
   console.log(id, lang);
   return (
     <>
-        <Header dictionary={dictionary}/>
-        <EventDetailsPage id={id} lang={lang} dictionary={dictionary} />
-        <Footer dictionary={dictionary} />
+      <Header dictionary={dictionary} lang={lang} />
+      <EventDetailsPage id={id} dictionary={dictionary} lang={lang} />
+      <Footer dictionary={dictionary} lang={lang} />
     </>
-);
+  );
 };
 
 export default EventDetailsWrapper;

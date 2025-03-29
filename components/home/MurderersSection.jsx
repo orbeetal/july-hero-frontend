@@ -44,17 +44,19 @@ function MurderersSection({ dictionary, lang }) {
                   image={murderer.image || "/placeholder.jpg"} // Default image if empty
                   name={murderer.name}
                   occupation={murderer.occupation}
+                  organization={murderer.organization}
                   address={murderer.address}
                   date={murderer.incident_date}
+                  lang={lang}
                 />
               ) : null,
             )}
           </div>
           {!pathname.includes("murderers") && (
-            <div className="flex w-full cursor-pointer justify-center text-white">
+            <div className="flex w-full cursor-pointer justify-end text-white">
               <Link
-                href="/murderers"
-                className="bg-brand rounded px-4 py-2 text-sm text-white md:px-6 md:text-base"
+                href={`/${lang}/murderers`}
+                className="rounded bg-brand px-4 py-2 text-sm text-white md:px-6 md:text-base"
               >
                 {dictionary.more} {">>"}
               </Link>

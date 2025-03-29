@@ -43,14 +43,15 @@ function InjuredSection({ dictionary, lang }) {
                   occupation={injured.occupation}
                   address={injured.address}
                   date={injured.incident_date}
+                  lang={lang}
                 />
               ) : null,
             )}
           </div>
           {!pathname.includes("injured") && (
-            <div className="flex w-full cursor-pointer justify-center text-white">
+            <div className="flex w-full cursor-pointer justify-end text-white">
               <Link
-                href="/injured"
+                href={`/${lang}/injured`}
                 className="rounded bg-brand px-4 py-2 text-sm text-white md:px-6 md:text-base"
               >
                 {dictionary.more} {">>"}

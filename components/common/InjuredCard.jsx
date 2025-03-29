@@ -1,11 +1,11 @@
 import Link from "next/link";
 import CardImage from "./CardImage";
 
-function InjuredItemCard({ id, name, image, occupation, date, address }) {
+function InjuredItemCard({ id, name, image, occupation, date, address, lang }) {
   return (
     <>
       <Link
-        href={`/injured/${id}`}
+        href={`/${lang}/injured/${id}`}
         className="group overflow-hidden rounded-2xl bg-white shadow"
       >
         <div className="relative aspect-square w-full overflow-hidden bg-brand">

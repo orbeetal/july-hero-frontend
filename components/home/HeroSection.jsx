@@ -151,7 +151,7 @@ function HeroSection({ dictionary }) {
             <div className="w-fit">
               <div onClick={handleModalOpen} className="cursor-pointer rounded-full border-2 border-white bg-[#690508] px-8 py-3 text-white hover:opacity-95">
                 <h2 className="text-xs font-semibold lg:text-xl">
-                  <a href="https://forms.gle/KWrkwvM6oqqv6Rq77">{dictionary.submitInformation}</a>
+                  <a target="_blank" href="https://forms.gle/KWrkwvM6oqqv6Rq77">{dictionary.submitInformation}</a>
                 </h2>
               </div>
             </div>

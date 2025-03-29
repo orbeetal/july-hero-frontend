@@ -1,11 +1,11 @@
 import Link from "next/link";
 import CardImage from "./CardImage";
 
-function MartyrsItemCard({ id, name, image, occupation, date, address }) {
+function MartyrsItemCard({ id, name, image, occupation, date, address, lang }) {
   return (
     <>
       <Link
-        href={`/martyrs/${id}`}
+        href={`/${lang}/martyrs/${id}`}
         className="group overflow-hidden rounded-2xl bg-white shadow"
       >
         <div className="relative aspect-square w-full overflow-hidden bg-brand">

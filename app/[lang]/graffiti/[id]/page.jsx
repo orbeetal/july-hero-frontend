@@ -1,9 +1,8 @@
 // src/app/martyrs/[slug]/MartyrDetailsWrapper.js
-import { getDictionary } from "@/dictionaries";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GraffitiDetailsPage from "@/components/graffiti/GraffitiDetails";
-
+import Header from "@/components/Header";
+import { getDictionary } from "@/dictionaries";
 
 const GraffitiDetailsWrapper = async ({ params }) => {
   const { id, lang = "en" } = await params;
@@ -11,11 +10,11 @@ const GraffitiDetailsWrapper = async ({ params }) => {
   console.log(id, lang);
   return (
     <>
-        <Header dictionary={dictionary}/>
-        <GraffitiDetailsPage id={id} lang={lang} dictionary={dictionary} />
-        <Footer dictionary={dictionary} />
+      <Header dictionary={dictionary} lang={lang} />
+      <GraffitiDetailsPage id={id} dictionary={dictionary} lang={lang} />
+      <Footer dictionary={dictionary} lang={lang} />
     </>
-);
+  );
 };
 
 export default GraffitiDetailsWrapper;

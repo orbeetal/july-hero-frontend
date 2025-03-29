@@ -9,9 +9,9 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <Header dictionary={dictionary}/>      
-       <MurderersSection dictionary={dictionary} lang={lang}/>
-      <Footer dictionary={dictionary} />
+      <Header dictionary={dictionary} lang={lang} />
+      <MurderersSection dictionary={dictionary} lang={lang} />
+      <Footer dictionary={dictionary} lang={lang} />
     </>
   );
 }

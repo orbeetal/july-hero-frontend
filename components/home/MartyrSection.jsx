@@ -46,15 +46,16 @@ function MartyrSection({ dictionary, lang }) {
                   occupation={martyr.occupation}
                   address={martyr.address}
                   date={martyr.incident_date}
+                  lang={lang}
                 />
               ) : null,
             )}
           </div>
           {!pathname.includes("martyrs") && (
-            <div className="flex w-full cursor-pointer justify-center text-white">
+            <div className="flex w-full cursor-pointer justify-end text-white">
               <Link
-                href="/martyrs"
-                className="bg-brand rounded px-4 py-2 text-sm text-white md:px-6 md:text-base"
+                href={`/${lang}/martyrs`}
+                className="rounded bg-brand px-4 py-2 text-sm text-white md:px-6 md:text-base"
               >
                 {dictionary.more} {">>"}
               </Link>

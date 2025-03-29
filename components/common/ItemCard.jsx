@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function ItemCard({ id, name, image, occupation, date, address }) {
+function ItemCard({ id, name, image, occupation, date, address, lang }) {
   return (
     <>
-      <Link href={`/${id}`} className="group overflow-hidden rounded-2xl shadow bg-white">
+      <Link href={`/${lang}/${id}`} className="group overflow-hidden rounded-2xl shadow bg-white">
         <div className="relative aspect-square w-full bg-brand overflow-hidden">
           {image && (
             <Image

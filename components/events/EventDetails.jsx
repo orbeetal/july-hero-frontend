@@ -23,7 +23,7 @@ export default function EventDetailsPage({ id, lang }) {
     <div className="min-h-screen bg-[#fff8f8] px-4 py-6 text-gray-800 sm:px-6 md:px-8">
       {/* Back Button */}
       <button
-        onClick={() => router.push("/events")}
+        onClick={() => router.push(`/${lang}/events`)}
         className="mb-4 rounded-lg bg-[#ff6666] px-6 py-3 text-sm text-white shadow-md transition duration-300 hover:bg-[#e65c5c] sm:text-base md:text-lg"
       >
         ← Back to Gallery

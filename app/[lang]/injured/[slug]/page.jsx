@@ -6,14 +6,14 @@ import InjuredDetailsPage from "./InjuredDetailsPage";
 
 
 const MartyrDetailsWrapper = async ({ params }) => {
-  const { slug, lang = "en" } = await params;
+  const { slug, lang } = await params;
   const dictionary = await getDictionary(lang); // Fetch dictionary on server
 
   return (
     <>
-        <Header dictionary={dictionary}/>
+        <Header dictionary={dictionary} lang={lang} />
         <InjuredDetailsPage slug={slug} lang={lang} dictionary={dictionary} />
-        <Footer dictionary={dictionary} />
+        <Footer dictionary={dictionary} lang={lang} />
     </>
 );
 };

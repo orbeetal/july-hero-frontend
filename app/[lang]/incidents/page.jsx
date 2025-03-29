@@ -10,10 +10,10 @@ export default async function Home({ params }) {
 
   return (
     <div className="h-auto">
-      <Header dictionary={dictionary}/>
-      <BannerSection />
+      <Header dictionary={dictionary} lang={lang} />
+      <BannerSection lang={lang} />
       <IncidentsPage dictionary={dictionary} lang={lang} />
-      <Footer dictionary={dictionary} />
+      <Footer dictionary={dictionary} lang={lang} />
     </div>
   );
 }

@@ -10,10 +10,10 @@ export default async function Home({ params }) {
 
   return (
     <>
-      <Header dictionary={dictionary} />
-      <MartyrSlider />
+      <Header dictionary={dictionary} lang={lang} />
+      <MartyrSlider lang={lang} />
       <MartyrSection dictionary={dictionary} lang={lang} />
-      <Footer dictionary={dictionary} />
+      <Footer dictionary={dictionary} lang={lang} />
     </>
   );
 }
