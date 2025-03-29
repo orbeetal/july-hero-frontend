@@ -3,6 +3,7 @@
 import { useGetEventsByIdQuery } from "@/redux/features/julyApi";
 import { useRouter } from "next/navigation";
 import Loading from "../common/Loader";
+import DOMPurify from 'dompurify';
 
 export default function EventDetailsPage({ id, lang }) {
   const router = useRouter();
@@ -67,9 +68,12 @@ export default function EventDetailsPage({ id, lang }) {
         </div>
 
         {/* Description */}
-        <p className="mt-2 text-sm text-gray-700 sm:text-base">
-          {details.description}
-        </p>
+        <div
+          className="prose max-w-full mt-2 text-sm text-gray-700 sm:text-base"
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(details.description),
+          }}
+        ></div>
       </div>
     </div>
   );

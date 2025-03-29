@@ -2,6 +2,7 @@
 import Loading from "@/components/common/Loader";
 import { useGetInjuredBySlugQuery } from "@/redux/features/julyApi";
 import Image from "next/image";
+import DOMPurify from 'dompurify';
 
 const InjuredDetailsPage = ({ slug, lang }) => {
   const {
@@ -68,7 +69,12 @@ const InjuredDetailsPage = ({ slug, lang }) => {
               <h2 className="text-lg font-semibold text-gray-800">
                 Incident Details:
               </h2>
-              <p className="mt-2 text-gray-700">{injured.incident}</p>
+              <div
+                className="prose max-w-full mt-2 text-gray-700"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(injured.incident),
+                }}
+              ></div>
             </div>
           )}
 
@@ -78,7 +84,12 @@ const InjuredDetailsPage = ({ slug, lang }) => {
               <h2 className="text-lg font-semibold text-gray-800">
                 Biography:
               </h2>
-              <p className="mt-2 text-gray-700">{injured.biography}</p>
+              <div
+                className="prose max-w-full mt-2 text-gray-700"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(injured.biography),
+                }}
+              ></div>
             </div>
           )}
         </div>

@@ -2,6 +2,7 @@
 import Loading from "@/components/common/Loader";
 import { useGetMartyrsBySlugQuery } from "@/redux/features/julyApi";
 import Image from "next/image";
+import DOMPurify from 'dompurify';
 
 const MartyrsDetailsPage = ({ slug, lang }) => {
   const {
@@ -66,7 +67,12 @@ const MartyrsDetailsPage = ({ slug, lang }) => {
           {martyr?.incident && (
             <div className="mt-6 rounded-md bg-[#e7e7e7] p-4 shadow-sm">
               <h2 className="text-lg font-semibold text-gray-800">Incident:</h2>
-              <p className="mt-2 text-gray-700">{martyr.incident}</p>
+              <div
+                className="prose max-w-full mt-2 text-gray-700"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(martyr.incident),
+                }}
+              ></div>
             </div>
           )}
 
@@ -76,7 +82,12 @@ const MartyrsDetailsPage = ({ slug, lang }) => {
               <h2 className="text-lg font-semibold text-gray-800">
                 Short Biography:
               </h2>
-              <p className="mt-2 text-gray-700">{martyr.biography}</p>
+              <div
+                className="prose max-w-full mt-2 text-gray-700"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(martyr.biography),
+                }}
+              ></div>
             </div>
           )}
         </div>

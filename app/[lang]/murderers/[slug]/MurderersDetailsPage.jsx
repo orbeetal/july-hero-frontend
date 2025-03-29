@@ -2,6 +2,7 @@
 import Loading from "@/components/common/Loader";
 import { useGetMurderersBySlugQuery } from "@/redux/features/julyApi";
 import Image from "next/image";
+import DOMPurify from 'dompurify';
 
 const MurderersDetailsPage = ({ slug, lang }) => {
   const {
@@ -68,7 +69,12 @@ const MurderersDetailsPage = ({ slug, lang }) => {
               <h2 className="text-lg font-semibold text-gray-800">
                 Incident Details:
               </h2>
-              <p className="mt-2 text-gray-700">{murderer.incident_details}</p>
+              <div
+                className="prose max-w-full mt-2 text-gray-700"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(murderer.incident_details),
+                }}
+              ></div>
             </div>
           )}
 
@@ -78,7 +84,12 @@ const MurderersDetailsPage = ({ slug, lang }) => {
               <h2 className="text-lg font-semibold text-gray-800">
                 Short Biography:
               </h2>
-              <p className="mt-2 text-gray-700">{murderer.biography}</p>
+              <div
+                className="prose max-w-full mt-2 text-gray-700"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(murderer.biography),
+                }}
+              ></div>
             </div>
           )}
         </div>
