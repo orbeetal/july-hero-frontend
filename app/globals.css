@@ -3,41 +3,38 @@
 @tailwind utilities;
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --brand-color: #bf292a;
+  --background: #ffffff;
+  --foreground: #171717;
+  --brand-color: #bf292a;
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
+  color: var(--foreground);
+  background: var(--background);
 }
 
 .bg-gradient {
-    background: linear-gradient(to right, #800709, #9b0d0d, #c51114);
-  }
+  background: linear-gradient(to right, #800709, #9b0d0d, #c51114);
+}
 
-  .bg-gradient-light {
-    background: linear-gradient(to right, #e00f13, #d31c1c, #de4c4e);
-  }
+.bg-gradient-light {
+  background: linear-gradient(to right, #e00f13, #d31c1c, #de4c4e);
+}
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 4px; /* Adjust the width of the scrollbar */
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color of the scrollbar */
-    border-radius: 10px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Darker color on hover */
-  }
-  
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px; /* Adjust the width of the scrollbar */
+}
 
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color on hover */
+}
 
 @layer utilities {
-    .text-gradient {
-
-    }
+  .text-gradient {
   }
+}

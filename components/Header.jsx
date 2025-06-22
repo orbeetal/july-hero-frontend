@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import BloodBackground from "./common/BloodBackground";
+import SearchBox from "./search/SearchBox";
 function Header({ dictionary, lang }) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
@@ -23,8 +24,8 @@ function Header({ dictionary, lang }) {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b bg-white text-brand">
-        <div className="container flex items-center justify-between p-4 py-1 sm:py-0">
+      <header className="sticky top-0 sm:top-10 950:top-0 z-50 border-b bg-white text-brand">
+        <div className="container flex items-center justify-between p-2 lg:p-4 py-1 sm:py-0">
           {/* Logo */}
           <Link
             href={`/${lang}`}
@@ -43,7 +44,7 @@ function Header({ dictionary, lang }) {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden justify-center gap-6 font-semibold sm:flex sm:font-bold">
+          <ul className="hidden justify-center items-center gap-2 sm:gap-3 text-xs md:text-sm lg:text-lg md:gap-6 font-semibold sm:flex sm:font-bold">
             <li>
               <Link href={`/${lang}`} className="hover:text-gray-300">
                 {dictionary.home}
@@ -74,24 +75,25 @@ function Header({ dictionary, lang }) {
                 {dictionary.incidents}
               </Link>
             </li>
+            <li className="hidden 950:block relative w-[180px]">
+              <SearchBox />
+            </li>
           </ul>
           {/* Language Switcher */}
           <div className="hidden items-center text-black sm:flex">
             <div className="relative flex h-[32px] w-[100px] items-center overflow-hidden rounded-[4px] border md:w-[158px]">
               <button
                 onClick={() => switchLanguage("bn")}
-                className={`h-full w-1/2 px-2 text-sm md:px-4 md:text-base ${
-                  isBengali ? "bg-brand text-white" : "bg-gray-200"
-                }`}
+                className={`h-full w-1/2 px-2 text-sm md:px-4 md:text-base ${isBengali ? "bg-brand text-white" : "bg-gray-200"
+                  }`}
               >
                 <span className="hidden md:block">বাংলা</span>
                 <span className="block md:hidden">BN</span>
               </button>
               <button
                 onClick={() => switchLanguage("en")}
-                className={`h-full w-1/2 px-2 text-sm md:px-4 md:text-base ${
-                  !isBengali ? "bg-brand text-white" : "bg-gray-200"
-                }`}
+                className={`h-full w-1/2 px-2 text-sm md:px-4 md:text-base ${!isBengali ? "bg-brand text-white" : "bg-gray-200"
+                  }`}
               >
                 <span className="hidden md:block">English</span>
                 <span className="block md:hidden">EN</span>
@@ -100,7 +102,10 @@ function Header({ dictionary, lang }) {
           </div>
 
           {/* Hamburger Menu for Mobile */}
-          <div className="sm:hidden">
+          <div className="sm:hidden flex items-center ">
+            <div className="w-[150px]">
+              <SearchBox />
+            </div>
             <button onClick={() => setIsOpen(true)}>
               <Menu className="h-6 w-6" />
             </button>
@@ -110,9 +115,8 @@ function Header({ dictionary, lang }) {
 
       {/* Sliding Mobile Menu */}
       <div
-        className={`fixed inset-0 z-50 transform bg-brand text-white transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-0 z-50 transform bg-brand text-white transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <BloodBackground>
           {/* Close Button */}
@@ -163,21 +167,19 @@ function Header({ dictionary, lang }) {
             <div className="relative flex h-[40px] w-[120px] items-center overflow-hidden rounded-lg border">
               <button
                 onClick={switchLanguage}
-                className={`h-full w-1/2 px-2 text-sm ${
-                  isBengali
+                className={`h-full w-1/2 px-2 text-sm ${isBengali
                     ? "bg-red opacity-75"
                     : "bg-white font-semibold text-black"
-                }`}
+                  }`}
               >
                 বাংলা
               </button>
               <button
                 onClick={switchLanguage}
-                className={`h-full w-1/2 px-2 text-sm ${
-                  !isBengali
+                className={`h-full w-1/2 px-2 text-sm ${!isBengali
                     ? "bg-red opacity-75"
                     : "bg-white font-semibold text-black"
-                }`}
+                  }`}
               >
                 English
               </button>

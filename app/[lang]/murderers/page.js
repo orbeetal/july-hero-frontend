@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MurderersSection from "@/components/home/MurderersSection";
+import SearchBox from "@/components/search/SearchBox";
 import { getDictionary } from "@/dictionaries";
 
 export default async function Home({ params }) {
@@ -8,7 +9,7 @@ export default async function Home({ params }) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <>
+    <> 
       <Header dictionary={dictionary} lang={lang} />
       <MurderersSection dictionary={dictionary} lang={lang} />
       <Footer dictionary={dictionary} lang={lang} />

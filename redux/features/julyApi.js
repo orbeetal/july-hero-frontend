@@ -3,19 +3,19 @@ import { apiSlice } from "./api/apiSlice";
 export const julyApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getMartyrs: builder.query({
-            query: (lang) => `martyrs?lang=${lang}`,
+            query: ({ lang, search = "" }) => `martyrs?lang=${lang}&search=${search}`,
         }),
         getMartyrsBySlug: builder.query({
             query: ({ slug, lang }) => `martyrs/${slug}?lang=${lang}`,
         }),
         getInjured: builder.query({
-            query: (lang) => `injured?lang=${lang}`,
+            query: ({ lang, search = "" }) => `injured?lang=${lang}&search=${search}`,
         }),
         getInjuredBySlug: builder.query({
             query: ({ slug, lang }) => `injured/${slug}?lang=${lang}`,
         }),
         getMurderers: builder.query({
-            query: (lang) => `murderers?lang=${lang}`,
+            query: ({ lang, search = "" }) => `murderers?lang=${lang}&search=${search}`,
         }),
         getMurderersBySlug: builder.query({
             query: ({ slug, lang }) => `murderers/${slug}?lang=${lang}`,

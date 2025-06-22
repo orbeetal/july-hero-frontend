@@ -6,6 +6,8 @@ import InjuredSection from "@/components/home/InjuredSection";
 import MartyrSection from "@/components/home/MartyrSection";
 import GrafitiSlider from "@/components/home/slider/Main";
 import StatsSection from "@/components/home/StatsSection";
+import SearchBox from "@/components/search/SearchBox";
+import TopSearch from "@/components/search/TopSearch";
 import BannerSlider from "@/components/slider/Slider";
 import { getDictionary } from "@/dictionaries";
 
@@ -15,6 +17,7 @@ export default async function Home({ params }) {
 
   return (
     <>
+      <TopSearch />
       <Header dictionary={dictionary} lang={lang} />
       <BannerSlider params={params} lang={lang} />
       {/* <HeroSection dictionary={dictionary} lang={lang} /> */}

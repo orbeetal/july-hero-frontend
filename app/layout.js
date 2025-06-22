@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${notoSansBengali.variable} flex min-h-screen flex-col justify-between antialiased`}
+        className={`${notoSansBengali.variable} flex min-h-screen flex-col justify-between antialiased overflow-x-hidden`}
       >
         <Providers>
           <main>{children}</main>
