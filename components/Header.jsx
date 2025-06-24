@@ -153,6 +153,11 @@ function Header({ dictionary, lang }) {
               </Link>
             </li>
             <li>
+              <Link href={`/${lang}/events`} onClick={() => setIsOpen(false)}>
+                {dictionary.events}
+              </Link>
+            </li>
+            <li>
               <Link
                 href={`/${lang}/incidents`}
                 onClick={() => setIsOpen(false)}

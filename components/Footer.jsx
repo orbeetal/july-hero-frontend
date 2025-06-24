@@ -72,9 +72,21 @@ const Footer = ({ dictionary, lang }) => {
           </div>
         </div>
 
-        <div className="container flex items-center justify-center py-4">
+        <div className="mt-8 border-t border-white/20 pt-4 text-center text-sm text-white/70">
           <p>© {year} All rights reserved</p>
+          <p className="mt-1">
+            Developed by{" "}
+            <a
+              href="https://orbeetal.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-semibold text-white hover:scale-105 transition-transform duration-200"
+            >
+              Orbeetal
+            </a>
+          </p>
         </div>
+
       </footer>
     </BloodBackground>
   );
