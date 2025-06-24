@@ -48,7 +48,7 @@ export default function SearchFilter({
             type="text"
             value={sectionSearch}
             onChange={(e) => setSectionSearch(e.target.value)}
-            placeholder={dictionary.searchPlaceholder || "Search martyrs..."}
+            placeholder={dictionary.searchPlaceholder || `Search ${category}...`}
             className="w-full text-sm focus:outline-none"
           />
           {sectionSearch && (
