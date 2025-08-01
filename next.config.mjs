@@ -1,18 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["july-heroes-backend.orbeetal.com"], // ✅ Add allowed domain
-  },
-  env: {
-     SERVER: process.env.SERVER,
-    },
-  images: {
+    domains: ["julyheroes.orbeetal.com"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "july-heroes-backend.orbeetal.com",
-      }
+        hostname: "julyheroes.orbeetal.com",
+      },
     ],
+  },
+  env: {
+    SERVER: process.env.SERVER,
   },
 };
 
